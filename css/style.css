@@ -1,0 +1,127 @@
+/* colores de cada modo (cambié la gama de Pomofocus: morado, naranja y azul petróleo) */
+body.trabajo { background-color: #6a4c93; }
+body.corto   { background-color: #e07a3f; }
+body.largo   { background-color: #1d7a8c; }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  min-height: 100vh;
+  transition: background-color 0.4s; /* para que el cambio de color sea suave */
+}
+
+.contenedor {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* botones de modo */
+.modos {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modo {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.modo.activo {
+  background: rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+}
+
+/* tarjetas */
+.tarjeta {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#tipo-sesion {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+#tiempo {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* botones de control */
+.controles {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.controles button,
+#btn-guardar {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: white;
+  color: #333;
+  font-weight: bold;
+}
+
+.contador {
+  margin-bottom: 0;
+}
+
+/* configuración */
+.config label {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.config input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#btn-guardar {
+  margin-top: 15px;
+}
+
+/* para que se vea cuando navego con el teclado (accesibilidad) */
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #ffeb3b;
+  outline-offset: 2px;
+}
+
+/* celulares */
+@media (max-width: 480px) {
+  #tiempo {
+    font-size: 4rem;
+  }
+
+  .modo {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}

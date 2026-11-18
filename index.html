@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto 21 - Temporizador Pomodoro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- la clase del body cambia según el modo (trabajo, corto, largo) para cambiar el color -->
+<body class="trabajo">
+
+  <main class="contenedor">
+    <h1>Temporizador Pomodoro</h1>
+
+    <!-- botones para cambiar de modo -->
+    <div class="modos">
+      <button id="btn-trabajo" class="modo activo" aria-pressed="true">Pomodoro</button>
+      <button id="btn-corto" class="modo" aria-pressed="false">Descanso corto</button>
+      <button id="btn-largo" class="modo" aria-pressed="false">Descanso largo</button>
+    </div>
+
+    <!-- aquí se muestra el tipo de sesión y el tiempo -->
+    <section class="tarjeta">
+      <p id="tipo-sesion" aria-live="polite">Trabajo</p>
+      <p id="tiempo" role="timer">25:00</p>
+
+      <div class="controles">
+        <button id="btn-iniciar" aria-label="Iniciar o pausar el temporizador">Iniciar</button>
+        <button id="btn-reiniciar" aria-label="Reiniciar el temporizador">Reiniciar</button>
+      </div>
+
+      <p class="contador">Sesiones de trabajo: <span id="contador">0</span></p>
+    </section>
+
+    <!-- configuración de los minutos -->
+    <section class="tarjeta config">
+      <h2>Configuración (minutos)</h2>
+
+      <label for="min-trabajo">Trabajo</label>
+      <input type="number" id="min-trabajo" value="25" min="1" max="90">
+
+      <label for="min-corto">Descanso corto</label>
+      <input type="number" id="min-corto" value="5" min="1" max="90">
+
+      <label for="min-largo">Descanso largo</label>
+      <input type="number" id="min-largo" value="15" min="1" max="90">
+
+      <button id="btn-guardar">Guardar</button>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
